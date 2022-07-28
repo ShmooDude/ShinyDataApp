@@ -4,13 +4,13 @@ This app is designed to allow data exploration and model building on a [Data Sci
 
 ## Packages
 
--   `shiny`: App framework
+-   `shinydashboard`: App framework
 -   `tidyverse`: Many useful functions.
 
 ### Install Code
 
 ```
-install.packages(c("shiny", "tidyverse"))
+install.packages(c("shinydashboard", "tidyverse"))
 ```
 
 ## To run ShinyDataApp

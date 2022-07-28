@@ -1,7 +1,6 @@
 ## app.R ##
 library(shinydashboard)
-
-
+library(tidyverse)
 
 header <- dashboardHeader(title = "Basic dashboard")
 
@@ -22,14 +21,33 @@ body <- dashboardBody(
   tabItems(
     # About
     tabItem(tabName = "about",
-            fluidRow(
-              box(plotOutput("plot1", height = 250)),
-              
-              box(
-                title = "Controls",
-                sliderInput("slider", "Number of observations:", 1, 100, 50)
-              )
-            )
+            h2("About"),
+            p("The purpose of this app is to explore the Data Scientist Salaries dataset, 
+              build a model and make predictions using that model"),
+            p("The data set is from kaggle and can be found",
+              a("here", href = "https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries"),
+              "."),
+            p("It includes things like the year the salary was paid, 
+              the experience level fo the employee, the empoyment type, 
+              job title, and more."),
+            p(strong("Data Exploration"),
+              "- This tab will allow you to explore the data using 
+              numerical and graphical summaries"),
+            p(strong("Modeling"),
+              "- This tab has three sub tabs and will allow you to find information 
+              about the models available (Modeling Info), fit the data using the models available (Model Fitting), 
+              and to make predictions using one of the models (Prediction)."),
+            p(strong("Data"),
+              "- This tab will allow you to scroll through the data set, 
+              subset the data and save the dataset")
+            # fluidRow(
+            #   box(plotOutput("plot1", height = 250)),
+            #   
+            #   box(
+            #     title = "Controls",
+            #     sliderInput("slider", "Number of observations:", 1, 100, 50)
+            #   )
+            # )
     ),
     
     # Data Exploration
