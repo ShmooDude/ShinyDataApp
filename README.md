@@ -5,12 +5,16 @@ This app is designed to allow data exploration and model building on a [Data Sci
 ## Packages
 
 -   `shinydashboard`: App framework
--   `tidyverse`: Many useful functions.
+-   `shinyWidgets`: Progress bar
+-   `tidyverse`: Many useful functions
+-   `datamods`: For filtering a data frame according to column's type
+-   `skimr`: For quick summary statistics
+-   `magrittr`: %<>% operator
 
 ### Install Code
 
 ```
-install.packages(c("shinydashboard", "tidyverse"))
+install.packages(c("shinydashboard", "tidyverse", "shinyWidgets", "datamods", "skimr"))
 ```
 
 ## To run ShinyDataApp
