@@ -1,9 +1,7 @@
 ## app.R ##
 library(datamods)
 library(shinydashboard)
-library(shinyWidgets)
 library(tidyverse)
-#library(DT)
 library(skimr)
 library(magrittr)
 
@@ -21,7 +19,7 @@ salaries$company_size %<>% factor(levels = c("S", "M", "L"),
 my_skim <- skim_with(factor = sfl(top_counts = ~top_counts(., max_char = 100)))
 
 # Dashboard
-header <- dashboardHeader(title = "Shiny Data App")
+header <- dashboardHeader(title = "Shiny Data App", titleWidth = 300)
 
 sidebar <- dashboardSidebar(
   width = 300,
@@ -38,16 +36,24 @@ sidebar <- dashboardSidebar(
       "input.sidebar_id != 'about'",
       fluidRow(
         column(
-          width = 4,
+          width = 6, align = "center",
           actionButton("saveFilterButton","Save Filter")
         ),
         column(
-          width = 4,
+          width = 6,
           actionButton("loadFilterButton","Load Filter")
         )
         
       ),
-      filter_data_ui("filtering", max_height = 500)
+      filter_data_ui("filtering", max_height = 500),
+      conditionalPanel(
+        "input.sidebar_id == 'data'",
+        br(),
+        column(
+          width = 12, align = "center",
+          downloadButton("data_download")
+        )
+      )
     )
   )
 )
@@ -168,10 +174,11 @@ body <- dashboardBody(
     # Data
     tabItem(
       tabName = "data",
-      box(
-        width = 12,
-        downloadButton("data_download"),
-        reactable::reactableOutput(outputId = "data_table")
+      fluidRow(
+        box(
+          width = 12,
+          reactable::reactableOutput(outputId = "data_table")
+        )
       )
     )
   )
@@ -240,7 +247,8 @@ server <- function(input, output, session) {
       scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
     if (input$exp_plot_type == "one") {
       if (input$exp_xaxis == "salary" | input$exp_xaxis == "salary_in_usd")
-        g + geom_histogram(bins = input$exp_bins)
+        g + geom_histogram(bins = input$exp_bins) + 
+        scale_x_continuous(labels = function(x) format(x, scientific = FALSE))
       else
         g + geom_bar()
     }
