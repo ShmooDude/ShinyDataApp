@@ -25,5 +25,5 @@ install.packages(c("datamods", "shinydashboard", "tidyverse", "skimr", "mathjaxr
 ## To run ShinyDataApp
 
 ```
-shiny::runGitHub()
+shiny::runGitHub("ShinyDataApp", "ShmooDude")
 ```
