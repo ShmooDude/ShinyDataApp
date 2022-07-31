@@ -467,7 +467,7 @@ server <- function(input, output, session) {
         geom_smooth(aes(linetype = hazardous)) +
         guides(color = guide_legend(override.aes = list(size=1, alpha=1), order = 1))
       else
-        g + aes_string(y = input$exp_yaxis) + geom_boxplot()
+        g + aes_string(y = input$exp_yaxis) + geom_boxplot(aes(fill = hazardous))
     }
   })
   
