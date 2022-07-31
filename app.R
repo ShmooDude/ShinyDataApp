@@ -1,4 +1,8 @@
 ## app.R ##
+# Mark Gordon
+# 07/31/2022
+# The purpose of the program is to create a shiny app that can do 
+# data exploration, model training and prediction.
 library(datamods)
 library(shinydashboard)
 library(tidyverse)
