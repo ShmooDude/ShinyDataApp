@@ -4,16 +4,22 @@ This app is designed to allow data exploration and model building on a [Data Sci
 
 ## Packages
 
--   `shinydashboard`: App framework
--   `tidyverse`: Many useful functions
 -   `datamods`: For filtering a data frame according to column's type
+-   `shinydashboard`: App framework for nicer tabs/sidepanels
+-   `tidyverse`: Many useful functions
 -   `skimr`: For quick summary statistics
--   `magrittr`: %<>% operator
+-   `mathjaxr`: For math symbols.
+-   `caret`: Model training
+-   `parallel`: Parallel Processing
+-   `doSNOW`: Parallel Processing
+-   `rpart.plot`: Prettier plot for rpart
+-   `waiter`: Automated Loading Screens
+-   `randomForest`: For random forest
 
 ### Install Code
 
 ```
-install.packages(c("shinydashboard", "tidyverse", "datamods", "skimr"))
+install.packages(c("datamods", "shinydashboard", "tidyverse", "skimr", "mathjaxr", "caret", "parallel", "doSNOW", "rpart.plot", "waiter", "randomForest"))
 ```
 
 ## To run ShinyDataApp
