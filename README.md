@@ -1,6 +1,6 @@
 ## Purpose
 
-This app is designed to allow data exploration and model building on a [Data Scientist Salaries dataset](https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries).
+This app is designed to allow data exploration and model building on a [Near Earth Objects Dataset](https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects).
 
 ## Packages
 
