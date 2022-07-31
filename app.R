@@ -87,7 +87,7 @@ body <- dashboardBody(
       p(strong("Modeling"),
         "- This tab has three sub tabs and will allow you to find information 
               about the models available (Modeling Info), fit the data using the models available (Model Fitting), 
-              and to make predictions using one of the models (Prediction)."),
+              and to make predictions using the models (Prediction)."),
       p(strong("Data"),
         "- This tab will allow you to scroll through the data set, 
               subset the data and save the dataset"),
